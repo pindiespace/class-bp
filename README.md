@@ -1,9 +1,9 @@
-# Class Boilerplate (adapted from fastshell)
+# Class Boilerplate - adapted from [fastshell](https://HosseinKarami.github.io/fastshell)
 
 A project boilerplate using gulp and best practices for HTML, CSS, JS.
 
 ## Project setup and Gulp installation
-You'll need to install Node and Gulp, along with several other npm libraries. Here's a walkthrough of 
+You'll need to install [Node](http://nodejs.org) and Gulp, along with several other npm libraries. Here's a walkthrough of 
 how to get a project up and running.
 
 1. Download this [repository](http://github.com/pindiespace/class-bp) archive. You can use a web download, but ideally you should go to Terminal and use 
@@ -12,7 +12,11 @@ how to get a project up and running.
 
 2. Install [Node.js](http://nodejs.org/download), [Sass](http://sass-lang.com/tutorial.html) and [Git](http://git-scm.com) on your machine. If you're a Windows user you'll also need to install [Ruby](http://rubyinstaller.org/downloads) for Sass to work.
 
-3. [Install Gulp](http://Gulpjs.com/) using `npm install -g gulp`. You may need to use `sudo` in front of the Gulp install command to give it permissions.
+3. [Install Gulp](http://Gulpjs.com/) using
+
+`npm install -g gulp`. 
+
+You may need to use `sudo` in front of the Gulp install command to give it permissions.
 
 4. Open Terminal and run `npm install`. You don't use `sudo` unless your machine's config requires you to use `sudo` to do this.
 
@@ -39,21 +43,8 @@ CSS changes are injected, all other changes force a page reload.
 
 4. Audio and video files in src/audio and src/video are transferred to the /app directory when they are changed. This allows you to work with authoring environments (e.g. Premiere) and automatically transfer exported files in .mp3 or .mp4 format.
 
-````js
-/*!
- * class-bp
- * Default template for student OOP builds
- * https://github.com/pindiespace/class-bp
- * Adapted from fastshell
- * https://HosseinKarami.github.io/fastshell
- * @author Pete Markiewicz
- * @version 1.0.0
- * Copyright 2017. MIT licensed.
- */
-````
-
 ### Browser-Sync
-Gulp's browser-sync will inject the following script into your HTML for you (not included when you deploy):
+Gulp's browser-sync will inject the following script into your HTML (not included when you deploy):
 
 ````html
 <script type='text/javascript'>//<![CDATA[
@@ -69,23 +60,23 @@ If you're including more Gulp tasks in your project, remember to use the `npm in
 Add new tasks to either the default `gulp` task at the `gulpfile.js`:
 
 ## JavaScript
-FastShell comes with a single `app.js` to get you started, using an immediately invoked function expression (IIFE). You may need a different configuration for frameworks or pure ES6/7/8 projects:
+class-bp comes with a single `app.js` to get you started, using an immediately invoked function expression (IIFE). You may need a different configuration for frameworks or pure ES6/7/8 projects:
 
 ````js
 (function ($, window, document, undefined) {
   'use strict';
-  // FastShell
+  // class-bp
 })(jQuery, window, document);
 ````
 
 The example imports window and document so you can use in debugging. Passing in the `jQuery` object and giving it the dollar alias also makes it play nicely if you're including other frameworks that use the `$` namespace.
 
 ## Sass/SCSS file configuration
-FastShell comes with a `.scss` file setup and existing `@import` declarations to the very common web components. FastShell hopes to help those out who aren't sure about structuring a CSS project confidently as well as getting them setup with using a CSS PreProcessor. 
+class-bp comes with a `.scss` file setup and existing `@import` declarations to the very common web components. class-bp hopes to help those out who aren't sure about structuring a CSS project confidently as well as getting them setup with using a CSS PreProcessor. 
 
 The basic idea:
 
-* `mixins` holds all Sass/SCSS mixins, FastShell ships with a few helpers
+* `mixins` holds all Sass/SCSS mixins, class-bp ships with a few helpers
 * `module` holds modules, more Object-Orientated components and a generic `app.scss` for everything else, all file names should be modular/OO.
 * `partials` holds the blueprints for the project, the header, footer, sidebar and so on.
 * `vendor` holds any files that are third party, such as the font awesome icons CSS
@@ -93,7 +84,7 @@ The basic idea:
 
 Note: The default background is in src/scss/modules/_vars.scss.
 
-## Hidden files on Macs (from fastshell)
+## Hidden files on Macs (from class-bp)
 
 It's a good idea to expose hidden files so you can configure your `.editorconfig`, `.jshintrc`, `.gitignore` files. On the command line, enter:
 
@@ -114,7 +105,7 @@ EditorConfig helps developers define and maintain consistent coding styles betwe
 Ignores minified and generated files, this is best for working in teams to avoid constant conflict, only the source files are needed.
 
 ### .travis.yml
-This is used on [travis-ci.org](http://travis-ci.org) for continuous integration tests, which monitor the FastShell build.
+This is used on [travis-ci.org](http://travis-ci.org) for continuous integration tests, which monitors the build.
 
 ## Platform support
 

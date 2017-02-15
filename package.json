@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/pindiespace/aframe-bp.git"
+    "url": "http://github.com/pindiespace/class-bp.git"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
