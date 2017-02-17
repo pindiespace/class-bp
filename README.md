@@ -41,7 +41,7 @@ CSS changes are injected, all other changes force a page reload.
 
 3. Images in src/images saved into a sub-folder (e.g. src/png) will be compressed and optimized before being saved into app/img directory
 
-4. Audio and video files in src/audio and src/video are transferred to the /app directory when they are changed. This allows you to work with authoring environments (e.g. Premiere) and automatically transfer exported files in .mp3 or .mp4 format.
+4. Fon, audio, video and 3d model files in src/audio and src/video are transferred to the /app directory when they are changed. This allows you to work with authoring environments (e.g. Premiere) and automatically transfer exported files in .mp3 or .mp4 format.
 
 ### Browser-Sync
 Gulp's browser-sync will inject the following script into your HTML (not included when you deploy):

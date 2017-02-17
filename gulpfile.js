@@ -34,7 +34,7 @@ gulp.task('css', function () {
 gulp.task('jslint', function(){
     return gulp.src([
         'src/js/*.js',
-        'src/js/*.es6'
+        'src/es6/*.es6'
       ]).pipe(jshint())
       .pipe(jshint.reporter(stylish))
       .on('error', function() {
@@ -42,8 +42,10 @@ gulp.task('jslint', function(){
       });
 });
 
-gulp.task('js',function(){
-    gulp.src('src/js/*.js')
+gulp.task('js', function(){
+    gulp.src(
+        ['src/js/*.js',
+        'src/js/*.es6'])
         return browserify({entries: 'src/js/app.js', debug: true})
         .transform("babelify", { presets: ["es2015"] })
         .bundle()
@@ -82,18 +84,30 @@ gulp.task('images', function() {
 });
 
 gulp.task('audio', function() {
-    gulp.src('src/images/**/*.mp3')
+    gulp.src('src/audio/**/*.mp3')
     .pipe(gulp.dest('app/audio/'))
     .pipe(browserSync.reload({stream:true, once: true}));
 });
 
 gulp.task('video', function() {
-    gulp.src('src/images/**/*.mp4')
+    gulp.src('src/video/**/*.mp4')
     .pipe(gulp.dest('app/video/'))
     .pipe(browserSync.reload({stream:true, once: true}));
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('fonts', function (){
+    gulp.src('src/fonts/*.*')
+    .pipe(gulp.dest('app/fonts/'))
+    .pipe(browserSync.reload({stream:true, once: true}));
+});
+
+gulp.task('models',function(){
+    gulp.src('src/models/obj/*.obj')
+    .pipe(gulp.dest('app/models/'))
+    .pipe(browserSync.reloac({stream:true, once: true}));
+});
+
+gulp.task('browser-sync', function () {
     browserSync.init(null, {
         server: {
             baseDir: "app"
@@ -111,6 +125,8 @@ gulp.task('default', ['css', 'js', 'browser-sync'], function () {
     gulp.watch("src/images/**/*.png", ['images']);
     gulp.watch("src/audio/**/*.mp3", ['audio']);
     gulp.watch("src/video/**/*.mp4", ['video']);
+    gulp.watch("src/fonts/*.*", ['fonts']);
+    gulp.watch("src/models/**/*.obj", ['models']);
     gulp.watch("src/html/*.html", ['html']);
     gulp.watch("app/*.html", ['bs-reload']);
 });
